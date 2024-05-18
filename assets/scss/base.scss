@@ -1,0 +1,16 @@
+// disable utilities to use tailwindcss utilities
+@use "vuetify" with (
+  $utilities: false
+);
+
+// tailwindcss
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+}
+
+body {
+  background-color: var(--main-bg);
+}

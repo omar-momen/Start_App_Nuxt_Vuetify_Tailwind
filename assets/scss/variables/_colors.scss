@@ -1,0 +1,11 @@
+/* Light Theme */
+:root {
+  --main-bg: #fff;
+  --text: #000;
+}
+
+/* Dark Theme */
+:root.dark {
+  --main-bg: #333;
+  --text: #fff;
+}
