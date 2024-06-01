@@ -1,9 +1,9 @@
 <template>
   <div class="preloader">
     <img
+      preset="default"
       width="300px"
       height="300px"
-      preset="default"
       src="/gifs/preloader.gif"
       alt="preloader"
     />

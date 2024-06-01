@@ -9,8 +9,10 @@
 @tailwind utilities;
 
 html {
-}
-
-body {
-  background-color: var(--main-bg);
+  body {
+    .v-application {
+      background: var(--main-bg);
+      color: var(--text);
+    }
+  }
 }

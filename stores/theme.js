@@ -7,12 +7,13 @@ export const useThemeStore = defineStore("theme", () => {
   const domManipulation = (theme) => {
     // Body
     const BODY = document.querySelector("body");
-    BODY.classList.add(`${theme === "light" ? "lightTheme" : "darkTheme"}`);
-    BODY.classList.remove(`${theme === "light" ? "darkTheme" : "lightTheme"}`);
+    const HTML = document.querySelector("html");
 
-    // Root  Attribuets
-    BODY.setAttribute("theme", theme);
-    document.documentElement["theme"] = theme;
+    // Root Attribuets
+    console.log(theme);
+    BODY.setAttribute("current_theme", theme);
+    HTML.setAttribute("current_theme", theme);
+    console.log(theme);
   };
 
   const framworksLocale = (theme) => {

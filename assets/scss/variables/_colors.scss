@@ -5,7 +5,7 @@
 }
 
 /* Dark Theme */
-:root.dark {
+:root[current_theme="dark"] {
   --main-bg: #333;
   --text: #fff;
 }

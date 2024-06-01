@@ -1,21 +1,7 @@
 <template>
-  <div class="app_loader">
+  <div
+    class="app_loader w-screen h-screen fixed z-[9999] bg-[var(--main-bg)] flex justify-center items-center"
+  >
     <Preloader />
   </div>
 </template>
-
-<script setup></script>
-
-<style  scoped>
-.app_loader {
-  background-color: var(--main-bg);
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-</style>
