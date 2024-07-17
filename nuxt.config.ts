@@ -3,6 +3,8 @@ import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 export default defineNuxtConfig({
   devtools: { enabled: false },
 
+  extends: ["github:omar-momen/Nuxt_3_Base_Layer"],
+
   css: ["@/assets/scss/main.scss"],
 
   postcss: {

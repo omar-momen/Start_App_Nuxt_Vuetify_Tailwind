@@ -8,7 +8,6 @@ import { ar, en } from "vuetify/locale";
 import { useThemeStore } from "~/stores/theme";
 
 export default defineNuxtPlugin((app) => {
-  // console.log(ar);
   const vuetify = createVuetify({
     locale: {
       locale: "ar",

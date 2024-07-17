@@ -22,7 +22,7 @@ const nuxtApp = useNuxtApp();
 
 // ======= Handling loading
 nuxtApp.hook("app:suspense:resolve", async () => {
-  // appStore.initLoading = false;
+  appStore.initLoading = false;
 });
 
 // ======= Handling Theme While loading

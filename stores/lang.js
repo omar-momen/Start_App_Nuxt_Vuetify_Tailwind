@@ -20,6 +20,7 @@ export const useLangStore = defineStore("lang", () => {
   };
 
   const fillStorage = (lang) => {
+    current_lang.value = lang;
     const lang_locale = useCookie("lang_locale");
     lang_locale.value = lang;
     nuxtApp.$encryptStorage.setItem("blank_App_Lang", lang);

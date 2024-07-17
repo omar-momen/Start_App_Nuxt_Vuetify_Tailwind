@@ -30,21 +30,21 @@ export default defineNuxtPlugin((nuxtApp) => {
     // await loader.load();
 
     // Handle Resize
-    // app_store.handleResize();
-    // window.addEventListener("resize", app_store.handleResize);
+    app_store.handleResize();
+    window.addEventListener("resize", app_store.handleResize);
 
     // Handle Scroll
-    // const lastScrollTop = ref(
-    //   window.pageYOffset || document.documentElement.scrollTop,
-    // );
-    // app_store.handleScroll(lastScrollTop);
-    // window.addEventListener(
-    //   "scroll",
-    //   () => {
-    //     app_store.handleScroll(lastScrollTop);
-    //   },
-    //   false,
-    // );
+    const lastScrollTop = ref(
+      window.pageYOffset || document.documentElement.scrollTop
+    );
+    app_store.handleScroll(lastScrollTop);
+    window.addEventListener(
+      "scroll",
+      () => {
+        app_store.handleScroll(lastScrollTop);
+      },
+      false
+    );
 
     // Handle Page Loading...
     nuxtApp.hook("page:start", () => {

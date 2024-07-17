@@ -10,10 +10,8 @@ export const useThemeStore = defineStore("theme", () => {
     const HTML = document.querySelector("html");
 
     // Root Attribuets
-    console.log(theme);
     BODY.setAttribute("current_theme", theme);
     HTML.setAttribute("current_theme", theme);
-    console.log(theme);
   };
 
   const framworksLocale = (theme) => {
@@ -21,6 +19,7 @@ export const useThemeStore = defineStore("theme", () => {
   };
 
   const fillStorage = (theme) => {
+    current_theme.value = theme;
     const theme_locale = useCookie("theme_locale");
     theme_locale.value = theme;
     nuxtApp.$encryptStorage.setItem("blank_App_Theme", theme);

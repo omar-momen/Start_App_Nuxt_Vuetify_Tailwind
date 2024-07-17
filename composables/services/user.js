@@ -13,6 +13,25 @@ export const userService = () => {
 
       return data?.value?.data;
     },
+    async editProfile(type, profileData) {
+      const { data, error } = await useMyFetch(
+        `member/profile/upload-${type}`,
+        {
+          method: "POST",
+          body: profileData,
+        }
+      );
+
+      if (useErrorHandler(error.value)) return;
+
+      const message =
+        langStore.current_lang == "en"
+          ? "Profile updated successfully"
+          : "تم تحديث البيانات بنجاح";
+      useSuccessToas(message);
+
+      return data?.value?.data;
+    },
 
     async uplodeProfileImage(image) {
       const { data, error } = await useMyFetch(`member/profile/upload-image`, {
@@ -30,7 +49,6 @@ export const userService = () => {
 
       return data?.value?.data;
     },
-
     async deleteProfileImage() {
       const { data, error } = await useMyFetch(`member/profile/delete-image`, {
         method: "POST",
@@ -42,26 +60,6 @@ export const userService = () => {
         langStore.current_lang == "en"
           ? "Image deleted successfully"
           : "تم حذف الصورة بنجاح";
-      useSuccessToas(message);
-
-      return data?.value?.data;
-    },
-
-    async editProfile(type, profileData) {
-      const { data, error } = await useMyFetch(
-        `member/profile/upload-${type}`,
-        {
-          method: "POST",
-          body: profileData,
-        },
-      );
-
-      if (useErrorHandler(error.value)) return;
-
-      const message =
-        langStore.current_lang == "en"
-          ? "Profile updated successfully"
-          : "تم تحديث البيانات بنجاح";
       useSuccessToas(message);
 
       return data?.value?.data;
